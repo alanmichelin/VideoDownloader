@@ -1,17 +1,12 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const readline = require('readline');
-const _download = require('./script')
-
-
 
 
   
 const ytSearch = async(toSearch,cb)=>{
-    const browser = await puppeteer.launch({headless: true});
-    // {headless: false}
+    const browser = await puppeteer.launch({headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'});
     const page = await browser.newPage();
     await page.goto('https://www.youtube.com');
-
     page.on('load', () => {
         console.log('Results:');
       });
@@ -19,11 +14,8 @@ const ytSearch = async(toSearch,cb)=>{
     await page.click('#search-icon-legacy')
     const pageUrl = await page.url()
     await page.goto(pageUrl+'&sp=EgIQAQ%253D%253D')
-    //video filter = &sp=EgIQAQ%253D%253D
-
-    await page.waitForTimeout(1500)
-    
-    
+    //get only videos filter = &sp=EgIQAQ%253D%253D
+    await page.waitForSelector('#content')
     const list = await page.evaluate(()=>{
         const vidsContainer= document.querySelector('#contents> .ytd-section-list-renderer > #contents')
         function Video(title,author,link,listID){

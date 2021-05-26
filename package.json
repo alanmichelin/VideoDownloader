@@ -2,17 +2,18 @@
   "name": "ytdownloader",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
-  "author": "",
+  "author": "Alan Michelin",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "ffmpeg": "0.0.4",
     "fluent-ffmpeg": "^2.1.2",
-    "puppeteer": "^9.1.1",
+    "puppeteer-core": "^9.1.1",
     "ytdl-core": "^4.8.0"
   }
+
 }

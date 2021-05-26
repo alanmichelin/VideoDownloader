@@ -1,7 +1,7 @@
 const fs = require('fs');
 const ytdl = require('ytdl-core');
-const ffmpeg = require('fluent-ffmpeg');
 const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
 ffmpeg.setFfmpegPath(ffmpegPath);
 const command = ffmpeg();
 const readline = require('readline');
@@ -23,14 +23,7 @@ const rl = readline.createInterface({
                     download(response)
                 })
 
-                
 
-
-
-  
-        
-
-        
       }
       else{
           download(answer)
@@ -70,7 +63,7 @@ const download = async (url)=>{
     }
 }
 
-module.exports = {download}
+
 
 
 
