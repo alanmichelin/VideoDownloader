@@ -1,0 +1,26 @@
+{
+  "name": "ytdownloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "author": "Alan Michelin",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "chalk": "^4.1.1",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "puppeteer-core": "^9.1.1",
+    "xhr2": "^0.2.1",
+    "ytdl-core": "^4.8.1"
+  },
+  "pkg": {
+    "path": "ffmpegInstaller.path",
+    "scripts": "./**/*.js",
+    "assets": "@ffmpeg-installer/**/*",
+    "outputPath": "dist"
+  }
+}
